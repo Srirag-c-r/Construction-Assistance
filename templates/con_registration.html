@@ -1,0 +1,86 @@
+
+    <!-- Navbar End -->
+
+ {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+            {% if message %}
+<script>
+alert("{{ message }}")
+</script>
+    {% endif %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white animated slideInRight">Contractor Registration</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contractor Registration</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fw-medium text-uppercase text-primary mb-2">Registration Details</p>
+                    
+                    
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="phonenumber" class="form-control" id="subject" placeholder="Phone Number" >
+                                    <label for="subject">Phone Number</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="address" placeholder="Address" id="message"
+                                        style="height: 150px" required></textarea>
+                                    <label for="message">Address</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="password" name="password" class="form-control" id="subject" placeholder="Password" pattern=".{8,}" title="Eight or more characters" required>
+                                    <label for="subject">Password</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-5" type="submit">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+ {% endblock %}

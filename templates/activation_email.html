@@ -1,0 +1,6 @@
+
+    <p>Hi {{ user.first_name }},</p>
+    <p>Please click the following link to activate your account:</p>
+    <a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">Activate Account</a>
+    <p>If you didn't request this, please ignore this email.</p>
+

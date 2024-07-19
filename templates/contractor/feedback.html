@@ -1,0 +1,39 @@
+ {% extends 'contractor/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white animated slideInRight">Feedback</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"Feedback</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+
+                                 <th class="success" style="color: white;">Workers Name</th>
+                                 <th class="success" style="color: white;">Feedback</th>
+
+
+              {% for i in pro %}
+                                <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.worker.user.first_name }}</td>
+                                    <td>{{ i.feedback }}</td>
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+
+  {% endblock %}

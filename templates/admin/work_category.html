@@ -1,0 +1,80 @@
+
+    <!-- Navbar End -->
+
+ {% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+
+            {% if message %}
+<script>
+alert("{{ message }}")
+</script>
+    {% endif %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white animated slideInRight">Work Category</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Work Category</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fw-medium text-uppercase text-primary mb-2">Add Category</p>
+
+
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="row g-3">
+
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="category" id="myInput" onblur="validateInput()" placeholder="Category" required>
+                                    <label for="text">Category</label>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-5" type="submit">Add Category</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function validateInput() {
+            var input = document.getElementById('myInput');
+            if (input.value.trim() !== input.value) {
+                alert('Leading white space is not allowed!');
+                input.value = input.value.trim(); // Remove leading white space
+                input.focus(); // Set focus back to the input field
+            }
+        }
+    </script>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+ {% endblock %}
